@@ -1,0 +1,19 @@
+# Установка зависимостей
+install:
+    #!/usr/bin/env pwsh
+    Install-Module -Name Pester -Force -SkipPublisherCheck
+
+# Запуск тестов с подробным выводом
+test:
+    #!/usr/bin/env pwsh
+    Invoke-Pester ./tests -Output Detailed
+
+# Запуск основного скрипта
+run:
+    #!/usr/bin/env pwsh
+    ./src/artifact_packaging.ps1
+
+# Очистка временных файлов
+clean:
+    #!/usr/bin/env pwsh
+    Remove-Item -Recurse -Force C:\temp\artifact_test -ErrorAction SilentlyContinue
