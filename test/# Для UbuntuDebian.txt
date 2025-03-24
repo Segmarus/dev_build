@@ -1,9 +1,0 @@
-# Для Ubuntu/Debian
-wget -q https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
-sudo apt-get update
-sudo apt-get install -y powershell
-
-# Для CentOS/RHEL
-sudo yum install -y https://packages.microsoft.com/config/rhel/$(rpm -E %{rhel})/packages-microsoft-prod.rpm
-sudo yum install -y powershell
